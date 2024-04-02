@@ -19,3 +19,4 @@ hs_err_pid*
 *.iml
 trading-application/src/main/resources/application.properties
 trading-application/src/main/resources/log4j.properties
+dbdata
