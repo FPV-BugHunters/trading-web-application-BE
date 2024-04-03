@@ -2,6 +2,28 @@
 
 
 
+
+
+
+
+## spustit Docker containeri
+```
+docker compose up -d
+```
+
+## phpMyAdmin
+http://localhost:3307/
+
+## Java cesta
+trading-application/src/main/java/com/umb/trading_software/TradingApplication.java
+
+
+## java Verzia
+openjdk 17.0.10 2024-01-16
+
+## Open Api documentation
+http://localhost:8080/swagger-ui/index.html#/
+
 # symbol-by-id-controller
 
 ```

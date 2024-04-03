@@ -4,8 +4,7 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
 
-@RepositoryRestResource(path="app-users")
-public interface AppUserRepository extends CrudRepository<AppUser, Long> {
-
+// @RepositoryRestResource(path="trading-account")
+public interface TradingAccountRepository extends CrudRepository<AppUser, Long> {
 
 }
