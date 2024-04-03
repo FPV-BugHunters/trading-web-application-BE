@@ -9,6 +9,9 @@ import com.xtrader.protocol.openapi.v2.ProtoOAErrorRes;
 import com.xtrader.protocol.openapi.v2.ProtoOASymbolByIdReq;
 import com.xtrader.protocol.openapi.v2.ProtoOASymbolByIdRes;
 
+
+
+
 public class ProtoOASymbolByIdReqExample {
 
     public static void main(String[] args) throws InterruptedException {
@@ -31,7 +34,6 @@ public class ProtoOASymbolByIdReqExample {
                 .newBuilder()
                 .setCtidTraderAccountId(ctidTraderAccountId)
                 .addSymbolId(1)
-                .addSymbolId(2)
                 .build();
         ProtoMessageReceiver receiver = nettyClient.writeAndFlush(protoOASymbolByIdReq);
 
@@ -39,6 +41,7 @@ public class ProtoOASymbolByIdReqExample {
 
         if (messageLite instanceof ProtoOASymbolByIdRes) {
             ProtoOASymbolByIdRes response = (ProtoOASymbolByIdRes) messageLite;
+            System.out.println(response.getSymbol(0).getSchedule(0));
             System.out.println(response);
         } else if (messageLite instanceof ProtoOAErrorRes) {
             ProtoOAErrorRes errorRes = (ProtoOAErrorRes) messageLite;

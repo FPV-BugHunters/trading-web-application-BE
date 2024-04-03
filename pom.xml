@@ -2,24 +2,26 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.umb.trading-software</groupId>
-    <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.5.4</version> <!-- or whatever version you are using -->
-    </parent>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>3.2.4</version>
+	</parent>
     <artifactId>trading-software</artifactId>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
 
-    <properties>
+    <!-- <properties>
         <java.version>1.8</java.version>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-    </properties>
+    </properties> -->
 
     <modules>
         <module>openapi2-client</module>
         <module>trading-application</module>
+        <module>springfox-protobuf</module>
+        <module>springdoc-protobuf-schema</module>
     </modules>
 
 
