@@ -53,3 +53,11 @@ http://localhost:8080/swagger-ui/index.html#/
   "toTimestamp": 1710058374000
 }
 ```
+
+
+
+Ctrader authetification
+https://help.ctrader.com/open-api/account-authentication/#sending-an-http-request
+
+Ctrader messages
+https://help.ctrader.com/open-api/messages/#protooaaccountauthreq

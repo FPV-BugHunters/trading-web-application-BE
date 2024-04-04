@@ -11,14 +11,16 @@ services:
       MYSQL_USER: user
       MYSQL_PASSWORD: password
       MYSQL_EXTERNAL_PORT: 3306
+
+    restart: always
     ports:
       - 3306:3306
     volumes:
       - ./dbdata:/var/lib/mysql
    
-  atlc_phpmyadmin:
+  phpmyadmin:
     image: phpmyadmin/phpmyadmin
-    container_name: atlc_phpmyadmin
+    container_name: phpmyadmin
     environment:
       PMA_HOST: service_db
       PMA_PORT: 3306
