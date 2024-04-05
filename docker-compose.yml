@@ -31,3 +31,10 @@ services:
       - service_db
     ports:
       - 3307:80
+        
+  # trading:
+  #   image: trading:1
+  #   ports:
+  #     - "8080:8080"
+  #   volumes:
+  #     - ./:/config
