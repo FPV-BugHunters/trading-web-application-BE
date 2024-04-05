@@ -22,7 +22,7 @@ trading-application/src/main/java/com/umb/trading_software/TradingApplication.ja
 openjdk 17.0.10 2024-01-16
 
 ## Open Api documentation
-http://localhost:8080/swagger-ui/index.html#/
+http://localhost:8080/swagger-ui/index.html
 
 # symbol-by-id-controller
 
