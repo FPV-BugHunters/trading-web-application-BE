@@ -8,7 +8,7 @@ public class AppUserController {
     
     @GetMapping("/api/app-users")
     public String hello() {
-        return "Hello, App User!";    
+        return "Hello, App User2 !";    
     }
 
 }
