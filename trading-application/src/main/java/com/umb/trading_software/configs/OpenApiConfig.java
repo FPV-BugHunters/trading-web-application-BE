@@ -9,7 +9,7 @@ import io.swagger.v3.oas.models.info.Info;
 @Configuration
 public class OpenApiConfig {
 	@Bean
-	public OpenAPI carDatabaseOpenAPI() {
+	public OpenAPI DatabaseOpenAPI() {
 		return new OpenAPI().info(new Info().title("Trading application").description("").version("1.0"));
 	}
 }
