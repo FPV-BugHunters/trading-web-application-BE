@@ -6,9 +6,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class AppUserController {
     
-    // @GetMapping("/api/app-users")
-    // public String hello() {
-        
-    // }
+    @GetMapping("/api/app-users")
+    public String hello() {
+        return "Hello, App User!";    
+    }
 
 }
