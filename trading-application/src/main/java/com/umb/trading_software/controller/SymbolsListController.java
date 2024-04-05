@@ -15,7 +15,6 @@ import com.xtrader.protocol.openapi.v2.ProtoOAErrorRes;
 import com.xtrader.protocol.openapi.v2.ProtoOASymbolsListReq;
 import com.xtrader.protocol.openapi.v2.ProtoOASymbolsListRes;
 
-import jakarta.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

@@ -5,11 +5,11 @@ import com.spotware.connect.Config;
 import com.spotware.connect.netty.AuthHelper;
 import com.spotware.connect.netty.NettyClient;
 import com.spotware.connect.netty.handler.ProtoMessageReceiver;
+import com.xtrader.protocol.openapi.v2.ProtoOAAssetListReq;
+import com.xtrader.protocol.openapi.v2.ProtoOAAssetListRes;
 import com.xtrader.protocol.openapi.v2.ProtoOAErrorRes;
-import com.xtrader.protocol.openapi.v2.ProtoOASymbolsListReq;
-import com.xtrader.protocol.openapi.v2.ProtoOASymbolsListRes;
 
-public class ProtoOASymbolsListReqExample {
+public class ProtoOAAssetListReqExample {
 
     public static void main(String[] args) throws InterruptedException {
         Config config = new Config();
@@ -20,28 +20,27 @@ public class ProtoOASymbolsListReqExample {
             Long ctidTraderAccountId = config.getCtid();
             authHelper.authorizeOnlyOneTrader(config.getClientId(), config.getClientSecret(), ctidTraderAccountId, config.getAccessToken());
 
-            sendProtoOASymbolListReq(nettyClient, ctidTraderAccountId);
+            sendProtoOAAssetListReq(nettyClient, ctidTraderAccountId);
         } finally {
             nettyClient.closeConnection();
         }
     }
 
-    private static void sendProtoOASymbolListReq(NettyClient nettyClient, long ctidTraderAccountId) throws InterruptedException {
-        ProtoOASymbolsListReq protoOASymbolsListReq = ProtoOASymbolsListReq
+    private static void sendProtoOAAssetListReq(NettyClient nettyClient, long ctidTraderAccountId) throws InterruptedException {
+        ProtoOAAssetListReq protoOAAssetListReq = ProtoOAAssetListReq
                 .newBuilder()
                 .setCtidTraderAccountId(ctidTraderAccountId)
                 .build();
-        ProtoMessageReceiver receiver = nettyClient.writeAndFlush(protoOASymbolsListReq);
+        ProtoMessageReceiver receiver = nettyClient.writeAndFlush(protoOAAssetListReq);
 
-        MessageLite messageLite = receiver.waitSingleResult(200L);
+        MessageLite messageLite = receiver.waitSingleResult();
 
-        if (messageLite instanceof ProtoOASymbolsListRes) {
-            ProtoOASymbolsListRes response = (ProtoOASymbolsListRes) messageLite;
+        if (messageLite instanceof ProtoOAAssetListRes) {
+            ProtoOAAssetListRes response = (ProtoOAAssetListRes) messageLite;
             System.out.println(response);
         } else if (messageLite instanceof ProtoOAErrorRes) {
             ProtoOAErrorRes errorRes = (ProtoOAErrorRes) messageLite;
             System.out.println(errorRes);
         }
     }
-
 }
