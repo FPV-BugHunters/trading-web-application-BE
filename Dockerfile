@@ -6,4 +6,5 @@ ARG JAR_FILE
 
 COPY trading-application/target/trading-application-0.0.1-SNAPSHOT.jar app.jar
 
-ENTRYPOINT ["java","-jar","/app.jar"]
+
+ENTRYPOINT ["java","–DApp.config.file=/config/local.properties", "-jar","/app.jar"]
