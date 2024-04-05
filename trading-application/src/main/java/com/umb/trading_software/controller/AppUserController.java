@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class AppUserController {
     
-    @GetMapping("/api/app-users")
+    @GetMapping("/api3/app-users")
     public String hello() {
         return "Hello, App User2 !";    
     }
