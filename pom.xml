@@ -14,7 +14,7 @@
 
     <modules>
         <module>openapi2-client</module>
-        <module>openapi2-example</module>
+        <module>trading-application</module>
     </modules>
 
 

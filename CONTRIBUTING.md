@@ -20,7 +20,7 @@ Changes that are cosmetic in nature and do not add anything substantial to the s
 
 * Open a new GitHub pull request with the example
 
-* The new example should be placed into `openapi2-example` module and have a new class to run it independently of other examples
+* The new example should be placed into `trading-application` module and have a new class to run it independently of other examples
 
 * Ensure the PR description clearly describes the issue
 
