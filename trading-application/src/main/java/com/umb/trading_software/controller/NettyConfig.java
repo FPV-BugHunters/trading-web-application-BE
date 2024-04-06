@@ -21,16 +21,16 @@ public class NettyConfig {
     @Value("${port}")
     private int configPort;
     
-    @Value("${CLIENT_PUBLIC_ID}")
+    @Value("${CTRADER_CLIENT_ID}")
     private String configClientId;
 
-    @Value("${CLIENT_SECRET}")
+    @Value("${CTRADER_CLIENT_SECRET}")
     private String configClientSecret;
 
-    @Value("${ACCESS_TOKEN}")
+    @Value("${EXAMPLE_ACCESS_TOKEN}")
     private String configAccessToken;
 
-    @Value("${CTID_TRADER_ACCOUNT_ID}")
+    @Value("${EXAMPLE_CTID_TRADER_ACCOUNT_ID}")
     private Long configCtid;
     
 

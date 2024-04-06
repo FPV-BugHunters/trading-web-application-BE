@@ -36,10 +36,10 @@ public class Config {
             prop.load(resourceStream);
             host = prop.getProperty("host");
             port = Integer.parseInt(prop.getProperty("port"));
-            clientId = prop.getProperty("CLIENT_PUBLIC_ID");
-            clientSecret = prop.getProperty("CLIENT_SECRET");
-            accessToken = prop.getProperty("ACCESS_TOKEN");
-            ctid = Long.parseLong(prop.getProperty("CTID_TRADER_ACCOUNT_ID"));
+            clientId = prop.getProperty("CTRADER_CLIENT_ID");
+            clientSecret = prop.getProperty("CTRADER_CLIENT_SECRET");
+            accessToken = prop.getProperty("EXAMPLE_ACCESS_TOKEN");
+            ctid = Long.parseLong(prop.getProperty("EXAMPLE_CTID_TRADER_ACCOUNT_ID"));
 
         } catch (IOException ex) {
             LOGGER.error(ex.getMessage(), ex);

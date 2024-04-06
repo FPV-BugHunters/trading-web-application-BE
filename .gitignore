@@ -17,7 +17,7 @@ hs_err_pid*
 # Intellij Idea
 .idea/
 *.iml
-trading-application/src/main/resources/application.properties
+# trading-application/src/main/resources/application.properties
 trading-application/src/main/resources/log4j.properties
 dbdata
 .vscode/settings.json
