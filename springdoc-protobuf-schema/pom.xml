@@ -14,7 +14,7 @@
 	<name>springdoc-protobuf-schema</name>
 	<description>A project to make the protobuf message schema shows up correctly in Swagger UI</description>
 	<properties>
-		<java.version>11</java.version>
+		<java.version>17</java.version>
 
 		<springdoc-openapi-ui.version>1.6.8</springdoc-openapi-ui.version>
 		<protobuf.version>3.19.1</protobuf.version>
@@ -68,5 +68,19 @@
 			<optional>true</optional>
 		</dependency>
 	</dependencies>
+	<build>
+		<plugins>
+			
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.8.0</version>
+				<configuration>
+					<source>17</source> <!-- Use the version you want -->
+					<target>17</target> <!-- Use the version you want -->
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 
 </project>
