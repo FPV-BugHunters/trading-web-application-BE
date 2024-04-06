@@ -17,8 +17,15 @@ hs_err_pid*
 # Intellij Idea
 .idea/
 *.iml
-# trading-application/src/main/resources/application.properties
+trading-application/src/main/resources/application.properties
+
+
 trading-application/src/main/resources/log4j.properties
 dbdata
 .vscode/settings.json
 docker.properties
+
+
+# for ignoring changes to a file
+# git update-index --assume-unchanged trading-application/src/main/resources/application.properties
+# git update-index --no-assume-unchanged trading-application/src/main/resources/application.properties
