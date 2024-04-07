@@ -28,4 +28,6 @@ docker.properties
 
 # for ignoring changes to a file
 # git update-index --assume-unchanged trading-application/src/main/resources/application.properties
+
+# for unignoring changes to a file
 # git update-index --no-assume-unchanged trading-application/src/main/resources/application.properties

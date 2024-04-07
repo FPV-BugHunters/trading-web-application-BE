@@ -1,7 +1,10 @@
 # trading-web-application-BE
 
+Zmeniť configuráciu v /trading-application/src/main/resources/application.properties a potom spustiť git príkaz aby ste nepridali konfiguráciu s tokenami do repositára.
 
-
+```
+git update-index --assume-unchanged trading-application/src/main/resources/application.properties
+``` 
 
 
 
