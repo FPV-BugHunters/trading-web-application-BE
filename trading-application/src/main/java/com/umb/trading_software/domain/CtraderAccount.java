@@ -1,64 +1,40 @@
 package com.umb.trading_software.domain;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import java.util.List;
+
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class CtraderAccount {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(nullable = false, updatable = false)
     private Long id;
 
     @Column(nullable = false)
-    private String refreshToken;
+    private String refreshToken = "";
     
     @Column(nullable = false)
-    private String accessToken;
+    private String accessToken = "";
     
     @Column(nullable = false)
-    private int expiresIn;
+    private int expiresIn = 0;
 
-	public CtraderAccount() { }
-    
 
-    public CtraderAccount(String refreshToken, String accessToken, int expiresIn) {
-        super();
-        this.refreshToken = refreshToken;
-        this.accessToken = accessToken;
-        this.expiresIn = expiresIn;
-    }
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "app_user_id", referencedColumnName = "id")
+    private AppUser appUser;
 
-    public Long getId() {
-        return id;
-    }
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "ctraderAccount", cascade = CascadeType.ALL)
+    private List<TradingAccount> tradingAccounts;
 
-    public void setRefreshToken(String refreshToken) {
-        this.refreshToken = refreshToken;
-    }
-    
-    public String getRefreshToken() {
-        return refreshToken;
-    }
-
-    public void setAccessToken(String accessToken) {
-        this.accessToken = accessToken;
-    }
-
-    public String getAccessToken() {
-        return accessToken;
-    }
-    
-    public void setExpiresIn(int expiresIn) {
-        this.expiresIn = expiresIn;
-    }
-
-    public int getExpiresIn() {
-        return expiresIn;
-    }
 
 }
 

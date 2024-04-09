@@ -1,13 +1,11 @@
 package com.umb.trading_software.domain;
 
-import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -16,16 +14,18 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class TradingAccount {
+public class AppUserRole {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(nullable = false, updatable = false)
-    private Integer ctidTraderAccountId;
-    
-    
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "ctrader_account_id", referencedColumnName = "id")
-    private CtraderAccount ctraderAccount;
-    
-}
+    private Long id;
 
+    @Column(nullable = false, unique = true)
+    private String name;
+
+
+    public AppUserRole(String name) {
+        this.name = name;
+    }
+}
